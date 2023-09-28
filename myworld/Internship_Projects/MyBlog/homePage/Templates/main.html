@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'stylemain.css' %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <img src="{% static 'rr.webp' %}" alt="logo" height="150px" width="150px" />
+                </div>
+                <div class="nav">
+                    <h1>My Blog</h1>
+                    <ul>
+                        <li><a href="/home/">home</a></li>
+                        <li><a href="/articles/">articles</a></li>
+                        <li><a href="/about/">about</a></li>
+                        <li><a href="/account/">account</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+        </div>
+
+            
+        {% block content %}
+        {% endblock %}
+
+        
+        <div class="footer">
+            <div class="footernav">
+                <ul>
+                    <li><a href="/home/">home</a></li>
+                    <li><a href="/articles/">articles</a></li>
+                    <li><a href="/about/">about</a></li>
+                </ul>
+                <p> Copyright &copy; 2023</p>
+            </div>
+        </div>
+    </body>
+</html>
+       

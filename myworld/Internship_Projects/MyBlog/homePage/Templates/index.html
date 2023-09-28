@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html>
+    {% block title %}
+    Home
+    {% endblock %}
+
+    {% block content %}
+    <div class="body">
+        <div class="top">
+            <h1>Articles</h1>
+            <div class="imageindex">
+                <a href="/reader/{{lastitem.id}}"><img src="{{ lastitem.image1.url }}" ></a>
+            </div>
+            
+            <p>
+                <a href="/reader/{{lastitem.id}}">{{ lastitem.title1 }}
+                {{ lastitem.intro }} </a>
+            </p>
+        </div>
+        
+        <div class="section">
+            <div class="leftsection">
+                {% for x in article %}
+                    <div class="item">
+                        <h3><a href="/reader/{{x.id}}"> {{ x.name }}</h3>
+                        <p><a href="/reader/{{x.id}}">{{ x.date_posted }}</a></p>
+                        <p><a href="/reader/{{x.id}}">{{ x.intro }}</a></p>
+                    </div>
+                {% endfor %}
+                <p><a href="/articles/"><span class="more">more</span></a></p>
+            </div>
+            
+            <div class="rightsection">
+                <h3>Sign In</h3>
+                
+                <form method="POST" action="details.url">
+                    {% csrf_token %}
+                    <input type="text" name="email" placeholder="email" required/>
+                    <input type="text" name="password" placeholder="password" minlength="8" required />
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div> 
+    </div>
+    
+    
+    {% endblock %}
+</html>

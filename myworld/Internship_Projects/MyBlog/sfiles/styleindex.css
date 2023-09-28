@@ -1,0 +1,9 @@
+body{
+    background-color: #fff;
+    margin: 10px;
+}
+.section{
+    width: 45%;
+    height: 500px;
+    float: left;
+}

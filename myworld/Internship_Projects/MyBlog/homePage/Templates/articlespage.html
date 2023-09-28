@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+<html>
+    {% block title %}
+    Articles
+    {% endblock %}
+    
+    
+        {% block content %}
+        <div class="body">
+            <div class="articlesection">
+                <div class="articleleft">
+                    {% for x in myarticles %}
+                    <div class="item">
+                        <a href="/reader/{{x.id}}">
+                            <img src="{{ x.image1.url }}">
+                            <h3>{{ x.title1 }}</h3>
+                            <h4>{{ x.date_posted }}</h4>
+                            <p>{{ x.intro }}</p>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="articlesider">
+
+                </div>
+            </div>
+    
+        </div>
+        {% endblock %}
+    
+</html>

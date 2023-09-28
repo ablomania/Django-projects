@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+<html>
+    {% block title %}
+    Acount Info
+    {% endblock %}
+
+    {% block content %}
+    <div class="body">
+        <div class="detailsp">
+            <p>First name:  {{ myaccnt.firstname }}</p>
+            <p>Last name:   {{ myaccnt.lastname }}</p>
+            <p>email:       {{ myaccnt.email }}</p>
+            <p>Age:         {{ myaccnt.age }}</p>
+            <p>Date joined: {{ myaccnt.date_joined }}</p>
+        </div>
+    </div>
+    {% endblock %}
+</html>

@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html>
+    {% block title %}
+    {{ reader.name }}
+    {% endblock %}
+
+    {% block content %}
+
+    
+
+    <div class="body">
+        <div class="sectiontitle">
+            <h1>{{ reader.title1 }}</h1>
+        </div>
+
+       <div class="sectionimage">
+            <img src="{{ reader.image1.url }}">
+       </div>
+
+        <div class="sectionread">   
+            <div class="sectionintro">
+                <p>{{ reader.intro }}</p>
+            </div>
+            
+            <div class="sectionbody">
+                <p>{{ reader.body1 }}</p>
+            
+                <h3>{{ reader.title2 }}</h3>
+
+                <img src="{{ reader.image2.url }}" alt="">
+
+                <p>{{ reader.body2 }}</p>
+            </div>
+            
+            <div class="sectionconc">
+                <p>{{ reader.conclusion }}</p>
+            </div>
+            <div class="readnav">
+                <a href="/reader/{{readerb}}"><button type="button" name="backbutton">Back</button></a>
+                <a href="/reader/{{readerf}}"><button type="button" name="nextbutton">Next</button></a>
+            </div>
+        </div>
+        
+        <div class="rightsection">
+            <h3>Suscribe</h3>
+            <form method="post">
+                <input type="text" name="username" placeholder="Name" />
+                <input type="email" name="useremail" placeholder="email" />
+                <input type="number" name="age" placeholder="Age" />
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="rightbottom">
+            <h3>Read also:</h3>
+            <ul>
+                {% for x in otherarticles %}
+                <li><a href="/reader/{{x.id}}">{{ x.title1 }}</a></li>
+                {% endfor %}
+            </ul>
+            
+        </div>
+        
+    </div>
+
+    {% endblock %}
+</html>

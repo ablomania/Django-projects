@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html>
+        {% block title %}
+        Contact
+        {% endblock %}
+
+        {% block content %}
+
+        <div class="body">
+            <div id="main">
+                <h1>Contact Us</h1>
+                <p>Author: {{ myname }}</p>
+                <p>email: {{ myemail }}</p>
+                <p>Telephone: {{ mynumber }}</p>
+            </div>
+        </div>
+
+        {% endblock %}
+</html>

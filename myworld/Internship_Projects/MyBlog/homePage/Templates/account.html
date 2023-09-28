@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+<html>
+    {% block title %}
+    account
+    {% endblock %}
+    
+    {% block content %}
+    <div class="body">
+        <div class="main">
+            <h1>Create account</h1>
+            <form action="" method="POST">{% csrf_token %}
+                <table>
+                    <tr>
+                        <td>
+                            <label>first name: </label>
+                        </td>
+                        <td>
+                             <input type="text" name="firstname" autofocus><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>last name: </label>
+                        </td>
+                        <td>
+                             <input type="text" name="lastname"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>age: </label>
+                        </td>
+                        <td>
+                            <input type="number" name="age"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>email: </label>
+                        </td>
+                        <td>
+                            <input type="email" name="email"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>password: </label>
+                        </td>
+                        <td>
+                            <input type="password" name="password"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>confirm password: </label>
+                        </td>
+                        <td>
+                            <input type="password" name ='password1'><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Create account">
+                        </td>
+                    </tr>
+                </table>    
+            </form>
+        </div>
+    </div>
+    
+    {% endblock %}
+</html>
